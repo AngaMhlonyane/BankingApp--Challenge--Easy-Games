@@ -1,0 +1,185 @@
+﻿@page
+@model IEnumerable<BankingApp__easygames.Models.Transaction>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banking App Landing Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet">
+    <style>
+        /* Background color */
+        body {
+            background-color: #f8f9fa;
+        }
+
+        /* Hero Section styles */
+        .hero {
+            background-color: #007bff;
+            color: #fff;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-size: 3rem;
+                margin-bottom: 20px;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                margin-bottom: 30px;
+            }
+
+        /* Features Section styles */
+        #features {
+            padding: 80px 0;
+        }
+
+        .feature {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+            .feature h3 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+        /* Services Section styles */
+        #services {
+            padding: 80px 0;
+        }
+
+        .service {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+            .service h3 {
+                font-size: 1.5rem;
+                margin-bottom: 20px;
+            }
+
+        /* Testimonials Section styles */
+        #testimonials {
+            padding: 80px 0;
+        }
+
+        .testimonial {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+            .testimonial p {
+                font-size: 1.2rem;
+                margin-bottom: 20px;
+            }
+
+            .testimonial cite {
+                font-weight: bold;
+            }
+
+        /* Navigation links */
+        .nav-link-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+            .nav-link-card i {
+                font-size: 3rem;
+                margin-bottom: 10px;
+                color: #007bff;
+            }
+
+            .nav-link-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 10px;
+            }
+    </style>
+</head>
+<body>
+
+    @if (SignInManager.IsSignedIn(User))
+    {
+
+
+
+        <!-- Navigation Links Section -->
+        <section id="navigation-links" class="features" >
+            <div class="container">
+            <center> <h2>Quick Actions</h2> </center>
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="nav-link-card">
+                        <a class="nav-link" asp-area="" asp-controller="Clients" asp-action="AddClient">
+                            <i class="fas fa-user-plus"></i>
+                            <h3>Add a<br /> Client</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="nav-link-card">
+                        <a class="nav-link" asp-area="" asp-controller="Clients" asp-action="Index">
+                            <i class="fas fa-users"></i>
+                            <h3>View <br />Clients</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="nav-link-card">
+                        <a class="nav-link" asp-area="" asp-controller="Transactions" asp-action="AddTransaction">
+                            <i class="fas fa-money-check-alt"></i>
+                            <h3>Make Transaction</h3>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="nav-link-card">
+                        <a class="nav-link" asp-area="" asp-controller="Transactions" asp-action="Index">
+                            <i class="fas fa-list-alt"></i>
+                            <h3>View Transactions</h3>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    }
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mx-auto">
+                    <h1>Welcome to Banking App</h1>
+                    <p>A modern banking solution for your financial needs.</p>
+                    <a href="#" class="btn btn-success">Get Started</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

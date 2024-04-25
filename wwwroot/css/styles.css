@@ -1,0 +1,62 @@
+﻿/* styles.css */
+.hero {
+    background-color: #FFD700; /* Gold color */
+    color: #006400; /* Dark Green color */
+    padding: 100px 0;
+    text-align: center;
+}
+
+.features {
+    padding: 100px 0;
+    text-align: center;
+}
+
+    .features h2 {
+        color: #006400; /* Dark Green color */
+    }
+
+.feature {
+    background-color: #F0FFF0; /* Light Green color */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.services {
+    padding: 100px 0;
+    text-align: center;
+}
+
+    .services h2 {
+        color: #006400; /* Dark Green color */
+    }
+
+.service {
+    background-color: #F0FFF0; /* Light Green color */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.testimonials {
+    padding: 100px 0;
+    text-align: center;
+}
+
+    .testimonials h2 {
+        color: #006400; /* Dark Green color */
+    }
+
+.testimonial {
+    background-color: #F0FFF0; /* Light Green color */
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.footer {
+    background-color: #333; /* Dark color */
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}

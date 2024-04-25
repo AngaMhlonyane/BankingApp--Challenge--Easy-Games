@@ -1,0 +1,33 @@
+﻿@model List<Transaction>
+<style>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" / >
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" / >
+    <link rel="stylesheet" href="~/BankingApp__easygames.styles.css" asp-append-version="true" / >
+    </style>
+
+<h2>Transactions</h2>
+
+<a asp-action="AddTransaction" asp-controller="Transactions" class="btn btn-primary">Add Transaction</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Client</th>
+            <th>Amount</th>
+            <th>Type</th>
+            <th>Comment</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var transaction in Model)
+        {
+            <tr>
+                <td>@(transaction.Client != null ? $"{transaction.Client.Name} {transaction.Client.Surname}" : "N/A")</td>
+                <td>@transaction.Amount</td>
+                <td>@transaction.TransactionType.TransactionTypeName</td>
+                
+                <td>@transaction.Comment</td>
+            </tr>
+        }
+    </tbody>
+</table>

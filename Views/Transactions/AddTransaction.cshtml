@@ -1,0 +1,44 @@
+﻿@model Transaction
+<style>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" / >
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" / >
+    <link rel="stylesheet" href="~/BankingApp__easygames.styles.css" asp-append-version="true" / >
+</style>
+<h2>Add Transaction</h2>
+
+<form asp-action="AddTransaction" method="post">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="ClientID" class="control-label"></label>
+        <select asp-for="ClientID" class="form-control" asp-items="ViewBag.Clients">
+            <option value="">Select Client</option>
+        </select>
+        <span asp-validation-for="ClientID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="Amount">Amount:</label>
+        <input type="number" class="form-control" id="Amount" asp-for="Amount">
+    </div>
+
+    <div class="form-group">
+        <label for="TransactionType">Transaction Type:</label>
+        <select class="form-control" id="TransactionType" asp-for="TransactionTypeID">
+            <option value="1">Debit</option>
+            <option value="2">Credit</option>
+        </select>
+        <span asp-validation-for="TransactionTypeID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Comment" class="control-label"></label>
+        <input asp-for="Comment" class="form-control" />
+        <span asp-validation-for="Comment" class="text-danger"> Reference Type</span>
+    </div>
+
+    <div class="form-group">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <a asp-action="Index" asp-controller="Transactions" class="btn btn-secondary">Back to Transactions</a>
+    </div>
+</form>

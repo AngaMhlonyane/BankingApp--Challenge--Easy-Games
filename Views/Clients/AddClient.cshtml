@@ -1,0 +1,34 @@
+﻿@model Client
+
+<h2>Add Client</h2>
+<style>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" / >
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" / >
+    <link rel="stylesheet" href="~/BankingApp__easygames.styles.css" asp-append-version="true" / ></style>
+<form asp-action="AddClient">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Surname" class="control-label"></label>
+        <input asp-for="Surname" class="form-control" />
+        <span asp-validation-for="Surname" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ClientBalance" class="control-label"></label>
+        <input asp-for="ClientBalance" class="form-control" />
+        <span asp-validation-for="ClientBalance" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary" />
+        <a asp-action="Index" class="btn btn-secondary">Back to Clients</a>
+    </div>
+</form>
+
